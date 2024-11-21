@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan Output</title>
+    <link rel="stylesheet" href="/static/css/output-style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generated Meal Plan</h1>
+        <div id="meal-plan"></div>
+        <a href="/" class="cta-button">Back to Home</a>
+    </div>
+
+    <script>
+        const mealPlan = JSON.parse(localStorage.getItem("mealPlan")) || [];
+        const mealPlanDiv = document.getElementById("meal-plan");
+
+        if (mealPlan.length > 0) {
+            mealPlanDiv.innerHTML = '<ul>';
+            mealPlan.forEach(meal => {
+                mealPlanDiv.innerHTML += `
+                    <li>
+                        <strong>${meal.title}</strong><br>
+                        Energy: ${meal.energy} kcal, Protein: ${meal.protein} g, Carbs: ${meal.carbs} g<br>
+                        <a href="${meal.link}" target="_blank">View Recipe</a>
+                    </li>`;
+            });
+            mealPlanDiv.innerHTML += '</ul>';
+        } else {
+            mealPlanDiv.innerHTML = '<p>No meal plan generated. Please go back and try again.</p>';
+        }
+    </script>
+</body>
+</html>

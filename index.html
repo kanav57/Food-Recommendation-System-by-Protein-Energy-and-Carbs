@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan Generator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Your Meal Plan</h1>
+        <form id="meal-plan-form">
+            <label for="proteinMin">Protein (Min, g):</label>
+            <input type="number" id="proteinMin" name="proteinMin" required>
+
+            <label for="proteinMax">Protein (Max, g):</label>
+            <input type="number" id="proteinMax" name="proteinMax" required>
+
+            <label for="carbsMin">Carbs (Min, g):</label>
+            <input type="number" id="carbsMin" name="carbsMin" required>
+
+            <label for="carbsMax">Carbs (Max, g):</label>
+            <input type="number" id="carbsMax" name="carbsMax" required>
+
+            <label for="energyMin">Energy (Min, kcal):</label>
+            <input type="number" id="energyMin" name="energyMin" required>
+
+            <label for="energyMax">Energy (Max, kcal):</label>
+            <input type="number" id="energyMax" name="energyMax" required>
+
+            <button type="button" id="generate-meal-plan">Generate Meal Plan</button>
+        </form>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
